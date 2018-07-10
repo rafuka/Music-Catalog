@@ -1,0 +1,4 @@
+(function(TM){
+
+	
+})(TweenMax)

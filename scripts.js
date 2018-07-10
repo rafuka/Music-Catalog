@@ -1,6 +1,10 @@
 (function() {
 	'use strict';
 
+	TweenMax.to('.page-title', 1, {borderRightColor: 'black'}).delay(1);
+	TweenMax.from('.page-title', 1.5, {width: 0, padding: 0, ease: Power0.easeNone}).delay(1.6);
+	TweenMax.to('.page-title', .5, {borderRightColor: 'transparent'}).delay(3.6);
+
 	if (!('indexedDB' in window)) {
 		return;
 	}
@@ -29,6 +33,9 @@
 				var newAlbum = createAlbumElement(albumData);
 				catalog.appendChild(newAlbum);
 			});
+
+
+			TweenMax.staggerFrom('.album', 1.5, { scale: 0 }, .3);
 		};
 	};
 
@@ -57,7 +64,28 @@
 					imgUrl: './assets/albumcover1.jpeg'
 				},
 				{
-					title: 'Pidgeons tryna steal my money.',
+					title: 'Pidgeons tryna steal my money',
+					trackNum: 17,
+					date: 1964,
+					author: 'Scrutin Martinez',
+					imgUrl: './assets/albumcover2.jpeg'
+				},
+				{
+					title: 'Abraham\'s lost flip-flop',
+					trackNum: 13,
+					date: 1989,
+					author: 'The Melting Hipsters',
+					imgUrl: './assets/albumcover3.jpeg'
+				},
+				{
+					title: 'Misterious Stuffy Bugs',
+					trackNum: 13,
+					date: 1989,
+					author: 'Winnie McGranny',
+					imgUrl: './assets/albumcover1.jpeg'
+				},
+				{
+					title: 'Pidgeons tryna steal my money',
 					trackNum: 17,
 					date: 1964,
 					author: 'Scrutin Martinez',
@@ -82,13 +110,14 @@
 	};
 
 	function createAlbumElement(albumData) {
-		var divWrap = document.createElement('div');
+
+		var album = document.createElement('article');
 		var img = document.createElement('img');
 		var info = document.createElement('div');
 		var infoTitle = document.createElement('h2');
 		var infoAuthor = document.createElement('p');
 
-		divWrap.classList.add('album');
+		album.classList.add('album');
 		img.classList.add('album__image');
 		info.classList.add('album__info');
 		infoTitle.classList.add('album__title');
@@ -104,9 +133,10 @@
 		img.setAttribute('src', albumData.imgUrl);
 		img.setAttribute('title', 'Album Cover');
 
-		divWrap.appendChild(img);
-		divWrap.appendChild(info);
+		album.appendChild(img);
+		album.appendChild(info);
 
-		return divWrap;
+		album.style.top = '100%';
+		return album;
 	}
 })();
