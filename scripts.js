@@ -1,9 +1,9 @@
 (function() {
 	'use strict';
 
-	TweenMax.to('.page-title', 1, {borderRightColor: 'black'}).delay(1);
-	TweenMax.from('.page-title', 1.5, {width: 0, padding: 0, ease: Power0.easeNone}).delay(1.6);
-	TweenMax.to('.page-title', .5, {borderRightColor: 'transparent'}).delay(3.6);
+	TweenMax.to('.page-title', 1, {borderRightColor: 'black'}).delay(.5);
+	TweenMax.from('.page-title', 1.2, {width: 0, padding: 0, ease: Power0.easeNone}).delay(1.1);
+	TweenMax.to('.page-title', .5, {borderRightColor: 'transparent'}).delay(2.7);
 
 	if (!('indexedDB' in window)) {
 		return;
@@ -35,7 +35,7 @@
 			});
 
 
-			TweenMax.staggerFrom('.album', 1.5, { scale: 0 }, .3);
+			TweenMax.staggerFrom('.album', 1.5, { scale: 0, delay: 3 }, .3);
 		};
 	};
 
@@ -72,31 +72,31 @@
 				},
 				{
 					title: 'Abraham\'s lost flip-flop',
-					trackNum: 13,
-					date: 1989,
+					trackNum: 9,
+					date: 2006,
 					author: 'The Melting Hipsters',
 					imgUrl: './assets/albumcover3.jpeg'
 				},
 				{
-					title: 'Misterious Stuffy Bugs',
-					trackNum: 13,
-					date: 1989,
+					title: 'Grandma\'s Bass Drop',
+					trackNum: 24,
+					date: 1964,
 					author: 'Winnie McGranny',
-					imgUrl: './assets/albumcover1.jpeg'
+					imgUrl: 'https://placeimg.com/300/300/people'
 				},
 				{
 					title: 'Pidgeons tryna steal my money',
 					trackNum: 17,
 					date: 1964,
 					author: 'Scrutin Martinez',
-					imgUrl: './assets/albumcover2.jpeg'
+					imgUrl: 'https://placeimg.com/300/300/tech'
 				},
 				{
 					title: 'Abraham\'s lost flip-flop',
 					trackNum: 13,
 					date: 1989,
 					author: 'The Melting Hipsters',
-					imgUrl: './assets/albumcover3.jpeg'
+					imgUrl: 'https://placeimg.com/300/300/animals'
 				}
 			];
 
