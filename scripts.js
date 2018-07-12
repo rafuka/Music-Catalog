@@ -15,8 +15,6 @@
 
 	openReq.onsuccess = function(e) {
 		var db = e.target.result;
-		console.log('database opened!')
-		console.log(db);
 		var transaction = db.transaction('albums', 'readonly');
 		var objStore = transaction.objectStore('albums');
 
@@ -25,8 +23,6 @@
 		getReq.onsuccess = function(e) {
 			
 			var albumsData = e.target.result;
-			console.log(albumsData);
-
 			var catalog = document.getElementById('catalog');
 
 			albumsData.forEach(function(albumData) {
@@ -34,8 +30,7 @@
 				catalog.appendChild(newAlbum);
 			});
 
-
-			TweenMax.staggerFrom('.album', 1.5, { scale: 0, delay: 3 }, .3);
+			TweenMax.staggerFrom('.album', 1, { scale: 0, delay: 3 }, .3);
 		};
 	};
 
@@ -44,9 +39,8 @@
 	};
 
 	// If the database didn't exist, the onupgradeneeded event will be called
-	// And the database will be populated with new data.
+	// And the database will be populated with new placehold data.
 	openReq.onupgradeneeded = function(e) {
-		console.log('database created!');
 		var db = e.target.result;
 		var objStore = db.createObjectStore('albums', { keyPath: 'id', autoIncrement: true });
 
@@ -100,11 +94,8 @@
 				}
 			];
 
-			console.log('adding albums');
-
 			albums.forEach(function(album) {
 				objStore.add(album);
-				console.log('album added');
 			});
 		};
 	};
@@ -139,4 +130,11 @@
 		album.style.top = '100%';
 		return album;
 	}
+
+	var addNewBtn = document.getElementById('add-new');
+
+	addNewBtn.addEventListener('click', function(e) {
+		console.log('click!');
+	});
+
 })();
