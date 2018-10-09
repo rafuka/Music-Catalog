@@ -1,32 +1,28 @@
 (function() {
 	'use strict';
 
-	TweenMax.to('.page-title', 1, {borderRightColor: 'black'}).delay(.5);
-	TweenMax.from('.page-title', 1.2, {width: 0, padding: 0, ease: Power0.easeNone}).delay(1.1);
-	TweenMax.to('.page-title', .5, {borderRightColor: 'transparent'}).delay(2.7);
-
 	if (!('indexedDB' in window)) {
 		return;
 	}
 
-	var idb = window.indexedDB;
+	const idb = window.indexedDB;
 
-	var openReq = idb.open('music-catalog', 1);
+	let openReq = idb.open('music-catalog', 1);
 
 	openReq.onsuccess = function(e) {
-		var db = e.target.result;
-		var transaction = db.transaction('albums', 'readonly');
-		var objStore = transaction.objectStore('albums');
+		let db = e.target.result;
+		let transaction = db.transaction('albums', 'readonly');
+		let objStore = transaction.objectStore('albums');
 
-		var getReq = objStore.getAll();
+		let getReq = objStore.getAll();
 
 		getReq.onsuccess = function(e) {
-			
-			var albumsData = e.target.result;
-			var catalog = document.getElementById('catalog');
+
+			let albumsData = e.target.result;
+			let catalog = document.getElementById('catalog');
 
 			albumsData.forEach(function(albumData) {
-				var newAlbum = createAlbumElement(albumData);
+				let newAlbum = createAlbumElement(albumData);
 				catalog.appendChild(newAlbum);
 			});
 
@@ -47,7 +43,7 @@
 		objStore.transaction.oncomplete = function(e) {
 			var transaction = db.transaction('albums', 'readwrite');
 			var objStore = transaction.objectStore('albums');
-			
+
 			// create some dummy data.
 			var albums = [
 				{

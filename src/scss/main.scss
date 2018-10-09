@@ -7,8 +7,6 @@
 }
 
 body {
-	background: url('../assets/background9.jpg');
-	background-repeat: repeat;
 	max-width: 900px;
 	margin: 0 auto;
 }
@@ -72,7 +70,6 @@ body {
 		}
 
 		&__author {
-			
 			display: block;
 		}
 
@@ -109,7 +106,6 @@ body {
 }
 
 #add-new-fields {
-	//visibility: hidden;
 	position: absolute;
 	top: 0px;
 	left: 0px;
