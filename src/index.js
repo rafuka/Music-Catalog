@@ -1,3 +1,7 @@
+import app from './app.js';
+
+app();
+
 (function() {
 	'use strict';
 
@@ -19,7 +23,7 @@
 		getReq.onsuccess = function(e) {
 
 			let albumsData = e.target.result;
-			let catalog = document.getElementById('catalog');
+			let catalog = document.getElementById('albums-list');
 
 			albumsData.forEach(function(albumData) {
 				let newAlbum = createAlbumElement(albumData);
@@ -35,7 +39,7 @@
 	};
 
 	// If the database didn't exist, the onupgradeneeded event will be called
-	// And the database will be populated with new placehold data.
+	// And the database will be populated with new placeholder data.
 	openReq.onupgradeneeded = function(e) {
 		var db = e.target.result;
 		var objStore = db.createObjectStore('albums', { keyPath: 'id', autoIncrement: true });

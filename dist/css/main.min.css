@@ -23,7 +23,7 @@ body {
   overflow: hidden;
   border-right: 3px solid transparent; }
 
-#catalog {
+#albums-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -33,13 +33,13 @@ body {
   position: relative;
   margin: 0px auto;
   margin-bottom: 50px; }
-  #catalog .album {
+  #albums-list .album {
     cursor: pointer;
     position: relative;
     overflow: hidden;
     width: 300px;
     height: 300px; }
-    #catalog .album__info {
+    #albums-list .album__info {
       background-color: rgba(0, 0, 0, 0.7);
       color: white;
       display: flex;
@@ -52,12 +52,12 @@ body {
       height: 100%;
       top: 100%;
       transition: top .5s ease; }
-    #catalog .album__title {
+    #albums-list .album__title {
       padding: 15px;
       display: block; }
-    #catalog .album__author {
+    #albums-list .album__author {
       display: block; }
-    #catalog .album:hover .album__info {
+    #albums-list .album:hover .album__info {
       top: 0%; }
 
 #add-new {
