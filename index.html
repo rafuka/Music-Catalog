@@ -11,7 +11,14 @@
   <div id="music-catalog">
     <h1 class="page-title">Music Catalog</h1>
     <div id="albums-list">
-      <li v-for="test in tests">hi</li>
+      <Album
+        v-for="(album, index) in albums"
+        :key="index"
+        :title="album.title"
+        :author="album.author"
+        :imgurl="album.imgUrl"
+        :date="album.date"
+        :tracknum="album.trackNum">
     </div>
     <button id="add-new">+</button>
     <div id="add-new-fields">

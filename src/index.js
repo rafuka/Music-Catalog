@@ -5,11 +5,11 @@ app();
 (function() {
 	'use strict';
 
-	if (!('indexedDB' in window)) {
+	/*if (!('indexedDB' in window)) {
 		return;
-	}
+	}*/
 
-	const idb = window.indexedDB;
+	/*const idb = window.indexedDB;
 
 	let openReq = idb.open('music-catalog', 1);
 
@@ -25,16 +25,16 @@ app();
 			let albumsData = e.target.result;
 			let catalog = document.getElementById('albums-list');
 
-			albumsData.forEach(function(albumData) {
+			albumsData.forEach(albumData => {
 				let newAlbum = createAlbumElement(albumData);
 				catalog.appendChild(newAlbum);
 			});
 
 			TweenMax.staggerFrom('.album', 1, { scale: 0, delay: 3 }, .3);
 		};
-	};
+	};*/
 
-	openReq.onerror = function(e) {
+	/*openReq.onerror = function(e) {
 		console.log(e.target.errorCode);
 	};
 
@@ -94,42 +94,10 @@ app();
 				}
 			];
 
-			albums.forEach(function(album) {
-				objStore.add(album);
-			});
+			albums.forEach(album => objStore.add(album));
 		};
-	};
+	};*/
 
-	function createAlbumElement(albumData) {
-
-		var album = document.createElement('article');
-		var img = document.createElement('img');
-		var info = document.createElement('div');
-		var infoTitle = document.createElement('h2');
-		var infoAuthor = document.createElement('p');
-
-		album.classList.add('album');
-		img.classList.add('album__image');
-		info.classList.add('album__info');
-		infoTitle.classList.add('album__title');
-		infoAuthor.classList.add('album__author');
-
-		console.log(infoAuthor);
-		infoAuthor.innerHTML = albumData.author;
-		infoTitle.innerHTML = albumData.title;
-
-		info.appendChild(infoTitle);
-		info.appendChild(infoAuthor);
-
-		img.setAttribute('src', albumData.imgUrl);
-		img.setAttribute('title', 'Album Cover');
-
-		album.appendChild(img);
-		album.appendChild(info);
-
-		album.style.top = '100%';
-		return album;
-	}
 
 	var addNewBtn = document.getElementById('add-new');
 
