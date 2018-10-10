@@ -8,125 +8,125 @@
   font-family: 'Roboto', sans-serif; }
 
 body {
-  max-width: 900px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 900px; }
 
 .page-title {
-  margin: 50px;
-  padding: 0px 50px;
-  display: inline-block;
-  text-align: left;
-  font-size: 3.5em;
+  border-right: 3px solid transparent;
   color: white;
-  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
+  display: inline-block;
+  font-size: 3.5em;
+  margin: 50px;
   overflow: hidden;
-  border-right: 3px solid transparent; }
+  padding: 0px 50px;
+  text-align: left;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
+  white-space: nowrap; }
 
 #albums-list {
+  align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: flex-start;
-  width: 100%;
+  margin: 0px auto;
+  margin-bottom: 50px;
   overflow: hidden;
   position: relative;
-  margin: 0px auto;
-  margin-bottom: 50px; }
+  width: 100%; }
   #albums-list .album {
     cursor: pointer;
-    position: relative;
+    height: 300px;
     overflow: hidden;
-    width: 300px;
-    height: 300px; }
+    position: relative;
+    width: 300px; }
     #albums-list .album__info {
+      align-items: center;
       background-color: rgba(0, 0, 0, 0.7);
       color: white;
       display: flex;
       flex-wrap: wrap;
+      height: 100%;
       justify-content: center;
-      align-items: center;
       position: absolute;
       text-align: center;
-      width: 100%;
-      height: 100%;
       top: 100%;
-      transition: top .5s ease; }
+      transition: top .5s ease;
+      width: 100%; }
     #albums-list .album__title {
-      padding: 15px;
-      display: block; }
+      display: block;
+      padding: 15px; }
     #albums-list .album__author {
       display: block; }
     #albums-list .album:hover .album__info {
       top: 0%; }
 
 #add-new {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  background-color: #008aff;
-  color: white;
-  font-size: 3em;
-  bottom: 70px;
-  right: 70px;
-  z-index: 1;
-  cursor: pointer;
-  line-height: 0px;
-  transition: all .3s ease;
-  border: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4); }
+  background-color: #008aff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  bottom: 70px;
+  color: white;
+  cursor: pointer;
+  font-size: 3em;
+  height: 50px;
+  line-height: 0px;
+  position: fixed;
+  right: 70px;
+  transition: all .3s ease;
+  width: 50px;
+  z-index: 1; }
   #add-new:hover {
     background-color: #4dadff; }
 
 #add-new-fields {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  left: 0px;
   position: absolute;
   top: 0px;
-  left: 0px;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
   z-index: 1; }
   #add-new-fields h1 {
-    text-align: center;
+    color: white;
     margin-top: 40px;
-    color: white; }
+    text-align: center; }
   #add-new-fields #new-album-form {
+    align-content: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 40px;
-    align-content: center; }
+    margin-top: 40px; }
     #add-new-fields #new-album-form .input-field {
-      width: 300px;
-      position: relative; }
+      position: relative;
+      width: 300px; }
     #add-new-fields #new-album-form label {
       color: white;
+      left: 0px;
       position: absolute;
       top: 15px;
-      left: 0px;
       transition: all .3s ease; }
       #add-new-fields #new-album-form label[for="album-img"] {
-        position: static;
-        margin-top: 20px; }
+        margin-top: 20px;
+        position: static; }
     #add-new-fields #new-album-form input {
-      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid white;
+      color: white;
+      margin: 7px 0px;
       padding: 5px;
       padding-top: 10px;
-      margin: 7px 0px;
-      border: none;
-      background-color: transparent;
-      border-bottom: 2px solid white;
-      color: white; }
+      width: 100%; }
       #add-new-fields #new-album-form input:focus, #add-new-fields #new-album-form input:invalid {
-        outline: none;
-        box-shadow: none; }
+        box-shadow: none;
+        outline: none; }
       #add-new-fields #new-album-form input:focus + label, #add-new-fields #new-album-form input:valid + label {
-        top: -2px;
-        font-size: .8em; }
+        font-size: .8em;
+        top: -2px; }
       #add-new-fields #new-album-form input#album-img {
         border: none; }
 
