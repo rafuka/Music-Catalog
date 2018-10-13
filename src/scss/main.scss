@@ -9,6 +9,7 @@
 body {
   margin: 0 auto;
   max-width: 900px;
+  color: red;
 }
 
 .page-title {
@@ -71,9 +72,10 @@ body {
     }
 
     &:hover {
+      transform: scale(1.3);
 
       .album__info {
-        top: 0%;
+        top: 30%;
       }
     }
   }
@@ -102,7 +104,8 @@ body {
   }
 }
 
-#add-new-fields {
+#add-new-album {
+  display: none;
   background-color: rgba(0,0,0,0.9);
   height: 100%;
   left: 0px;
@@ -166,6 +169,10 @@ body {
         border: none;
       }
     }
+  }
+
+  &.visible {
+    display: block;
   }
 }
 

@@ -1,3 +1,5 @@
+import TweenLite from 'gsap';
+
 export default function () {
 
   Vue.component('Album', {
@@ -28,6 +30,14 @@ export default function () {
     },
     created() {
       console.log('album created!');
+
+    },
+    mounted() {
+      console.log('album mounted!');
+      TweenLite.staggerFromTo('.album', .7, {scale: 0, opacity: 0}, {scale: 1, opacity: 1}, .4);
+    },
+    methods: {
+
     },
     template:
     `
@@ -41,10 +51,12 @@ export default function () {
     `
   });
 
+
   new Vue({
     el: '#music-catalog',
     data: {
       isLoading: true,
+      isAddingNew: false,
       albums: [],
       error: null
     },
@@ -107,7 +119,7 @@ export default function () {
         let openReq = idb.open('music-catalog', 1);
         let data = [];
 
-        openReq.onsuccess = function(e) {
+         openReq.onsuccess = function(e) {
           let db = e.target.result;
           let transaction = db.transaction('albums', 'readonly');
           let objStore = transaction.objectStore('albums');
@@ -187,15 +199,15 @@ export default function () {
             data.forEach(album => objStore.add(album));
           };
         };
+      },
+      toggleAddNew() {
+        this.isAddingNew = !this.isAddingNew;
       }
     },
     watch: {
       albums: function() {
-
         console.log('Albums changed!');
-        console.log(document.getElementsByClassName('album'));
-        TweenMax.staggerTo('.album', 1, { scale: 1, delay: 1 }, .3);
-        TweenMax.to('.album', { scale: 1} );
+
       }
     },
     beforeCreate() {
@@ -206,6 +218,9 @@ export default function () {
       console.log('created -----');
       this.loadAlbums();
     },
+    mounted() {
+      console.log('catalogue mounted!');
 
+    },
   });
 }

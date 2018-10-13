@@ -4,24 +4,26 @@
   <meta charset="utf-8">
   <title>Music Catalog</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/main.css">
 
 </head>
 <body>
   <div id="music-catalog">
     <h1 class="page-title">Music Catalog</h1>
     <div id="albums-list">
-      <Album
-        v-for="(album, index) in albums"
-        :key="index"
-        :title="album.title"
-        :author="album.author"
-        :imgurl="album.imgUrl"
-        :date="album.date"
-        :tracknum="album.trackNum">
+
+        <Album
+          v-for="(album, index) in albums"
+          :key="index"
+          :title="album.title"
+          :author="album.author"
+          :imgurl="album.imgUrl"
+          :date="album.date"
+          :tracknum="album.trackNum">
+
     </div>
-    <button id="add-new">+</button>
-    <div id="add-new-fields">
+    <button id="add-new" @click="toggleAddNew">+</button>
+    <div id="add-new-album" :class="isAddingNew ? 'visible' : ''">
       <h1>Add new album</h1>
       <form id="new-album-form">
         <div class="input-field">
@@ -45,6 +47,7 @@
           <input id="album-img" type="file" name="image">
         </div>
       </form>
+      <button id="cancel-add-new" @click="toggleAddNew">Cancel</button>
     </div>
   </div>
 
