@@ -81,7 +81,7 @@ body {
   }
 }
 
-#add-new {
+#toggle-add-new {
   appearance: none;
   background-color: #008aff;
   border: none;
@@ -93,6 +93,7 @@ body {
   font-size: 3em;
   height: 50px;
   line-height: 0px;
+  outline: none;
   position: fixed;
   right: 70px;
   transition: all .3s ease;

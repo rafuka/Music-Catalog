@@ -58,7 +58,14 @@ export default function () {
       isLoading: true,
       isAddingNew: false,
       albums: [],
-      error: null
+      error: null,
+      newAlbum: {
+        title: '',
+        trackNum: 0,
+        date: 0,
+        author: '',
+        imgUrl: './assets/albumcover2.jpeg' // NOTE: this must be changed
+      }
     },
     methods: {
       loadAlbums() {
@@ -200,8 +207,14 @@ export default function () {
           };
         };
       },
-      toggleAddNew() {
+      toggleAddNew(e) {
+        e.preventDefault();
         this.isAddingNew = !this.isAddingNew;
+      },
+      addNew(e) {
+        e.preventDefault();
+        let vm = this;
+        vm.albums.push({ ...vm.newAlbum });
       }
     },
     watch: {
@@ -209,10 +222,6 @@ export default function () {
         console.log('Albums changed!');
 
       }
-    },
-    beforeCreate() {
-      console.log('before create -----');
-
     },
     created() {
       console.log('created -----');

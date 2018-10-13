@@ -64,7 +64,7 @@ body {
       #albums-list .album:hover .album__info {
         top: 30%; }
 
-#add-new {
+#toggle-add-new {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -78,12 +78,13 @@ body {
   font-size: 3em;
   height: 50px;
   line-height: 0px;
+  outline: none;
   position: fixed;
   right: 70px;
   transition: all .3s ease;
   width: 50px;
   z-index: 1; }
-  #add-new:hover {
+  #toggle-add-new:hover {
     background-color: #4dadff; }
 
 #add-new-album {
