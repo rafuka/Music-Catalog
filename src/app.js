@@ -220,7 +220,6 @@ export default function () {
     watch: {
       albums: function() {
         console.log('Albums changed!');
-
       }
     },
     created() {
@@ -229,7 +228,6 @@ export default function () {
     },
     mounted() {
       console.log('catalogue mounted!');
-
     },
   });
 }

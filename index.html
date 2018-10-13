@@ -14,7 +14,7 @@
 
         <Album
           v-for="(album, index) in albums"
-          :key="index"
+          :key="index + 1"
           :title="album.title"
           :author="album.author"
           :imgurl="album.imgUrl"
