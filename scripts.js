@@ -56,3 +56,11 @@ catch(err) {
 }
 
 // last.fm API KEY: 1fb243b0e9d33f6ee17652a4aaf4d00
+
+setTimeout(function() {
+	console.log('tha threes!')
+	var script = document.createElement('script')
+	script.setAttribute('type', 'text/javascript')
+	script.setAttribute('src', 'test.js')
+	document.body.appendChild(script)
+}, 3000);
